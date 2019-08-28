@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_add){
-//            Intent intent = new Intent(MainActivity.this, FormActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, FormActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity implements
         Cursor cursor = (Cursor) dicodingNotesAdapter.getItem(i);
 
         int id = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseContract.NoteColumns._ID));
-//        Intent intent = new Intent(MainActivity.this, FormActivity.class);
-//        intent.setData(Uri.parse(CONTENT_URI+"/"+id));
-//        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, FormActivity.class);
+        intent.setData(Uri.parse(CONTENT_URI+"/"+id));
+        startActivity(intent);
     }
 }
